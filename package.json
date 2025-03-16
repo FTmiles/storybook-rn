@@ -1,0 +1,88 @@
+{
+  "name": "dh-cowi-ui",
+  "version": "0.1.0",
+  "type": "module",
+  "files": [
+    "dist",
+    "index.css"
+  ],
+  "main": "./dist/cowi-ui-lib.js",
+  "module": "./dist/cowi-ui-lib.umd.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/cowi-ui-lib.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/cowi-ui-lib.umd.js"
+      }
+    },
+    "./styles.css": "./dist/index.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cowi-business-it/dh-cowi-ui.git"
+  },
+  "keywords": [
+    "Digital Hub",
+    "COWI Exchange",
+    "UI Components"
+  ],
+  "author": "Team Supernova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cowi-business-it/dh-cowi-ui/issues"
+  },
+  "homepage": "https://github.com/cowi-business-it/dh-cowi-ui#readme",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "build": "npm run build-components && npm run build-tailwind",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "build-tailwind": "tailwindcss -i ./src/core/styles.css -o ./dist/index.css",
+    "build-components": "tsc && vite build"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.4",
+    "@storybook/addon-essentials": "^8.5.8",
+    "@storybook/addon-interactions": "^8.5.8",
+    "@storybook/addon-onboarding": "^8.5.8",
+    "@storybook/blocks": "^8.5.8",
+    "@storybook/react": "^8.5.8",
+    "@storybook/react-vite": "^8.5.8",
+    "@storybook/test": "^8.5.8",
+    "@tailwindcss/cli": "^4.0.14",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.13.10",
+    "jsdom": "^26.0.0",
+    "storybook": "^8.5.8",
+    "tailwindcss": "^4.0.9",
+    "typescript": "^5.7.3",
+    "vite": "^6.2.1",
+    "vitest": "^3.0.7"
+  },
+  "dependencies": {
+    "@radix-ui/react-checkbox": "^1.1.4",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-dropdown-menu": "^2.1.6",
+    "@radix-ui/react-select": "^2.1.6",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@tailwindcss/vite": "^4.0.9",
+    "@vitejs/plugin-react": "^4.3.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.476.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.0.2",
+    "vite-plugin-dts": "^4.5.0"
+  }
+}
